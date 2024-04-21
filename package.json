@@ -1,5 +1,5 @@
 {
-	"name": "modrinth.js",
+	"name": "modrinth.ts",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./dist/index.js",
