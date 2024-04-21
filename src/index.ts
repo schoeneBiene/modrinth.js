@@ -15,10 +15,10 @@ import { GameVersion } from "./enums/tags/GameVersion";
 import { Loader } from "./enums/tags/Loader";
 import { ProjectType } from "./enums/tags/ProjectType";
 import { SideType } from "./enums/tags/SideType";
+import { ProjectEditOptions } from "./types/projects/ProjectEditOptions";
 import { SearchHit } from "./interfaces/search/SearchHit";
 import SearchResult from "./interfaces/search/SearchResult";
 import { GalleryCreationOptions } from "./types/projects/GalleryCreationOptions";
-import { ProjectEditOptions } from "./types/projects/ProjectEditOptions";
 
 export {
 	ModrinthClient,

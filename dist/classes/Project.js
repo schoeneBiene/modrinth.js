@@ -1,5 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Gallery = void 0;
+class Gallery {
+    galleryEntries;
+    id;
+    constructor(client, galleryData, projectId) {
+        this.galleryEntries = galleryData;
+        this.id = projectId;
+    }
+    getEntries() {
+        return this.galleryEntries;
+    }
+    createEntry(img, options) { }
+}
+exports.Gallery = Gallery;
 class Project {
     client;
     client_side;
@@ -35,6 +49,7 @@ class Project {
     discord_url;
     donation_urls;
     gallery;
+    galleryEntries;
     color;
     thread_id;
     monetization_status;
@@ -72,7 +87,8 @@ class Project {
         this.wiki_url = projectInfo.wiki_url;
         this.discord_url = projectInfo.discord_url;
         this.donation_urls = projectInfo.donation_urls;
-        this.gallery = projectInfo.gallery;
+        this.gallery = new Gallery(this.client, projectInfo.galleryEntries, this.id);
+        this.galleryEntries = projectInfo.galleryEntries;
         this.color = projectInfo.color;
         this.thread_id = projectInfo.thread_id;
         this.monetization_status = projectInfo.monetization_status;
@@ -119,9 +135,16 @@ class Project {
                 ._make_request(`/project/${this.id}`, "PATCH", editOptions)
                 .then(() => {
                 if (doNotRefetch != true) {
-                    this.refetch();
+                    this.refetch().then(() => {
+                        resolve();
+                    });
                 }
-                resolve();
+                else {
+                    resolve();
+                }
+            })
+                .catch((reason) => {
+                reject(reason);
             });
         });
     }
@@ -182,7 +205,7 @@ class Project {
         this.wiki_url = projectInfo.wiki_url;
         this.discord_url = projectInfo.discord_url;
         this.donation_urls = projectInfo.donation_urls;
-        this.gallery = projectInfo.gallery;
+        this.gallery = new Gallery(this.client, projectInfo.galleryEntries, this.id);
         this.color = projectInfo.color;
         this.thread_id = projectInfo.thread_id;
         this.monetization_status = projectInfo.monetization_status;
