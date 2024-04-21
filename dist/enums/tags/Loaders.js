@@ -1,0 +1,28 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Loader = void 0;
+var Loader;
+(function (Loader) {
+    Loader["BUKKIT"] = "bukkit";
+    Loader["BUNGEECORD"] = "bungeecord";
+    Loader["CANVAS"] = "canvas";
+    Loader["DATAPACK"] = "datapack";
+    Loader["FABRIC"] = "fabric";
+    Loader["FOLIA"] = "folia";
+    Loader["FORGE"] = "forge";
+    Loader["IRIS"] = "iris";
+    Loader["LITELOADER"] = "liteloader";
+    Loader["MINECRAFT"] = "minecraft";
+    Loader["MODLOADER"] = "modloader";
+    Loader["NEOFORGE"] = "neoforge";
+    Loader["OPTIFINE"] = "optifine";
+    Loader["PAPER"] = "paper";
+    Loader["PURPUR"] = "purpur";
+    Loader["QUILT"] = "quilt";
+    Loader["RIFT"] = "rift";
+    Loader["SPIGOT"] = "spigot";
+    Loader["SPONGE"] = "sponge";
+    Loader["VANILLA"] = "vanilla";
+    Loader["VELOCITY"] = "velocity";
+    Loader["WATERFALL"] = "waterfall";
+})(Loader || (exports.Loader = Loader = {}));
